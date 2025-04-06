@@ -22,3 +22,10 @@ export interface VehicleBrand {
   averageMileage: number;
   mileageUnit: string;
 }
+
+export interface Route {
+  origin: string;
+  destination: string;
+  distanceKm: number;
+  estimatedTime: string;
+}
