@@ -177,7 +177,7 @@ const CostChat = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <RouteIcon className="h-5 w-5" />
-          Trakeye - Cost & Route Analyzer
+          Trakeye - Cost Analyzer
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-grow overflow-auto pb-0">
