@@ -38,8 +38,8 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div className="lg:col-span-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <TransportModeSelector 
               modes={transportModes} 
               selectedMode={selectedMode} 
@@ -47,7 +47,7 @@ const Index = () => {
             />
           </div>
           
-          <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <VehicleBrands 
               brands={vehicleBrands}
               transportType={selectedMode?.type || ''}
@@ -56,15 +56,15 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <CostCalculator 
               fuels={fuels} 
               selectedMode={selectedMode}
               selectedBrands={selectedBrands}
             />
           </div>
-          <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <CostChat />
           </div>
         </div>
