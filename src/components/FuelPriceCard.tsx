@@ -23,16 +23,16 @@ const FuelPriceCard = ({ fuel }: FuelPriceCardProps) => {
   };
 
   return (
-    <Card className={`h-full ${getFuelClass()}`}>
-      <CardHeader className="pb-2">
-        <CardTitle className="flex items-center justify-between">
+    <Card className={`h-auto ${getFuelClass()}`}>
+      <CardHeader className="pb-1 pt-3">
+        <CardTitle className="flex items-center justify-between text-base">
           <span>{fuel.type}</span>
           <span className="text-lg font-bold">{formatPrice(fuel.price)}</span>
         </CardTitle>
-        <CardDescription>{fuel.unit}</CardDescription>
+        <CardDescription className="text-xs">{fuel.unit}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="text-sm">
+      <CardContent className="pb-1 pt-0">
+        <div className="text-xs">
           <div className="flex justify-between mb-1">
             <span>Yesterday</span>
             <span>{formatPrice(fuel.previousPrice)}</span>
@@ -46,7 +46,7 @@ const FuelPriceCard = ({ fuel }: FuelPriceCardProps) => {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="text-xs text-muted-foreground">
+      <CardFooter className="text-xs text-muted-foreground py-1">
         Last updated: {fuel.lastUpdated}
       </CardFooter>
     </Card>

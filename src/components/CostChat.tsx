@@ -33,7 +33,7 @@ const CostChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: 'Hello! I\'m your transportation cost analyzer assistant. Ask me about routes, fuel costs, or any transportation expenses.',
+      content: 'Hello! I\'m Trakeye, your transportation cost analyzer assistant. Ask me about routes, fuel costs, or any transportation expenses.',
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -177,7 +177,7 @@ const CostChat = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <RouteIcon className="h-5 w-5" />
-          Cost & Route Analyzer
+          Trakeye - Cost & Route Analyzer
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-grow overflow-auto pb-0">
@@ -215,7 +215,7 @@ const CostChat = () => {
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about routes, costs, or fuel prices..."
+            placeholder="Ask Trakeye about routes, costs, or fuel prices..."
             disabled={isLoading}
             className="flex-grow"
           />
