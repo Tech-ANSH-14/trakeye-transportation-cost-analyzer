@@ -38,34 +38,37 @@ const Index = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <div className="lg:col-span-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <TransportModeSelector 
-              modes={transportModes} 
-              selectedMode={selectedMode} 
-              onSelectMode={handleSelectMode} 
-            />
+        <div className="flex flex-col-reverse lg:flex-row gap-6 mb-8">
+          {/* Left side - AI Chat Bot (Takes more space) */}
+          <div className="lg:w-3/5 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <CostChat />
           </div>
           
-          <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <VehicleBrands 
-              brands={vehicleBrands}
-              transportType={selectedMode?.type || ''}
-              onSelectBrand={handleSelectBrand}
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <CostCalculator 
-              fuels={fuels} 
-              selectedMode={selectedMode}
-              selectedBrands={selectedBrands}
-            />
-          </div>
-          <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <CostChat />
+          {/* Right side - Control panels stacked vertically */}
+          <div className="lg:w-2/5 space-y-6">
+            <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <TransportModeSelector 
+                modes={transportModes} 
+                selectedMode={selectedMode} 
+                onSelectMode={handleSelectMode} 
+              />
+            </div>
+            
+            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <VehicleBrands 
+                brands={vehicleBrands}
+                transportType={selectedMode?.type || ''}
+                onSelectBrand={handleSelectBrand}
+              />
+            </div>
+            
+            <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <CostCalculator 
+                fuels={fuels} 
+                selectedMode={selectedMode}
+                selectedBrands={selectedBrands}
+              />
+            </div>
           </div>
         </div>
       </main>
